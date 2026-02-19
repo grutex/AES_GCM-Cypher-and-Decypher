@@ -4,8 +4,8 @@
 
 RABC Programa de cifra simétrica de bloco AES-GCM.
 
-
-Para Criptografar uma mensagem:
+[PT-BR]
+Para Encriptar uma messagem:
 --------------------
 Plain Text e Key estão pre-setados no programa, mas podem ser alterados.
 
@@ -19,8 +19,7 @@ Plain Text e Key estão pre-setados no programa, mas podem ser alterados.
 
 
 
-
-Para Descriptografar ma mensagem:
+Para Decifrar a menssagem:
 -----------------------
 1 - crie um executável do código usando GCC ou qualquer outro compilador, passando -lssl e -lcrypto.
 	ex.: gcc < programa.c > -o < nome_do_executavel > -lssl -lcrypto
@@ -30,3 +29,30 @@ Para Descriptografar ma mensagem:
 	ex.: ./decrypt < hex_plaintext > <hex_iv> <hex_tagGCM>
 		
 3 - Se os parâmetros derem match, a me
+
+
+[EN-US]
+To Encrypt a message:
+--------------------
+1 — Create an executable from the code using GCC or any other compiler, passing the -lssl and -lcrypto flags.
+
+Example: gcc <program.c> -o <executable_name> -lssl -lcrypto
+
+2 — Run it in the terminal. A printout containing the ciphertext, IV (Initialization Vector), and tag will be generated based on the plain_text and the key.
+
+3 — Encrypted parameters, already in hexadecimal format, will be generated and printed to the terminal.
+
+Aqui está a continuação da tradução, mantendo o tom técnico e o padrão de documentação:
+
+
+To Decrypt the Message:
+--------------------
+1 — Create an executable from the code using GCC or any other compiler, passing the -lssl and -lcrypto flags.
+
+Example: gcc <program.c> -o <executable_name> -lssl -lcrypto
+
+2 — Pass the ciphertext, Initialization Vector (IV), and the GCM tag (in HEXADECIMAL) via command line, exactly in that order (argv[1], [2], [3]). These are the values provided after executing the encryption code.
+
+Example: ./decrypt <hex_ciphertext> <hex_iv> <hex_tagGCM>
+
+3 — If the parameters match, the original message will be decrypted and displayed.
