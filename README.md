@@ -1,12 +1,9 @@
 # AES_GCM-Cypher-and-Decypher
 2 Separate algorithms that Cyphers &amp; Decyphers any given Plain Text with the given key using AES-GCM
 
-
-RABC Programa de cifra simétrica de bloco AES-GCM.
+HOW TO:
 
 [PT-BR]
-
-
 Para Encriptar uma messagem:
 --------------------
 Plain Text e Key estão pre-setados no programa, mas podem ser alterados.
@@ -33,8 +30,10 @@ Para Decifrar a menssagem:
 3 - Se os parâmetros derem match, a me
 
 
-[EN-US]
 
+
+
+[EN-US]
 
 To Encrypt a message:
 --------------------
