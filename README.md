@@ -1,52 +1,28 @@
-🛡️ AES-GCM Encryption/Decryption Tool
-A simple implementation using OpenSSL to encrypt and decrypt messages with AES-GCM.
+RABC Programa de cifra simétrica de bloco AES-GCM.
 
-🇧🇷 Português (PT-BR)
-🔐 Como Encriptar
-O Plain Text (texto puro) e a Key (chave) estão pré-configurados no código, mas podem ser alterados livremente.
 
-Compile o código: Utilize o GCC (ou outro compilador) passando as flags do OpenSSL.
+Para Criptografar uma mensagem:
+--------------------
+Plain Text e Key estão pre-setados no programa, mas podem ser alterados.
 
-Bash
-gcc programa.c -o encrypt -lssl -lcrypto
-Execute o programa: No terminal, rode o executável.
+1 - crie um executável do código usando GCC ou qualquer outro compilador, passando -lssl e -lcrypto.
+	ex.: gcc < programa.c > -o < nome_do_executavel > -lssl -lcrypto
 
-bash
-./encrypt
-Resultado: O texto cifrado, o IV e a Tag serão gerados em formato hexadecimal e exibidos no console.
+2 - execute-o no terminal, um print com o exto cifrado, iv e a tag serão gerados baseados no plain_text
+	e na chave.
 
-🔓 Como Decifrar
-Compile o código:
+3 - parâmetros criptografados, já em hexadecimal, serão gerados e imprimidos no terminal.
 
-bash
-gcc decifrar.c -o decrypt -lssl -lcrypto
-Passe os parâmetros: Execute o programa enviando o texto cifrado, o IV e a Tag GCM (em hexadecimal) via linha de comando, exatamente nesta ordem:
 
-bash
-./decrypt <hex_ciphertext> <hex_iv> <hex_tagGCM>
-Sucesso: Se os parâmetros forem válidos e a tag coincidir, a mensagem original será revelada.
 
-🇺🇸 English (EN-US)
-🔐 How to Encrypt
-Plain Text and Key are preset in the program but can be modified.
 
-Compile the code: Use GCC or any other compiler, passing the -lssl and -lcrypto flags.
+Para Descriptografar ma mensagem:
+-----------------------
+1 - crie um executável do código usando GCC ou qualquer outro compilador, passando -lssl e -lcrypto.
+	ex.: gcc < programa.c > -o < nome_do_executavel > -lssl -lcrypto
 
-bash
-gcc program.c -o encrypt -lssl -lcrypto
-Run the program: Execute it in your terminal.
-
-bash
-./encrypt
-Output: The ciphertext, IV, and Tag (in hexadecimal) will be generated and printed to the terminal.
-
-🔓 How to Decrypt
-Compile the code:
-
-bash
-gcc decrypt.c -o decrypt -lssl -lcrypto
-Provide parameters: Pass the ciphertext, Initialization Vector (IV), and the GCM tag (in HEX) via command line in this exact order (argv[1], [2], [3]):
-
-bash
-./decrypt <hex_ciphertext> <hex_iv> <hex_tagGCM>
-Success: If the parameters match, the original message will be decrypted and displayed.
+2 - passe na linha de comando o texto cifrado, o vetor de inicialização(iv) e a tag do GCM (em HEXADECIMAL)
+	exatamente nessa ordem (argv[1], [2], [3]) valores que são dados após a execução do código.
+	ex.: ./decrypt < hex_plaintext > <hex_iv> <hex_tagGCM>
+		
+3 - Se os parâmetros derem match, a mensagem pré-setada será printada no terminal.
