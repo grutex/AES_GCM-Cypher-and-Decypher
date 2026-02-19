@@ -1,6 +1,3 @@
-RABC Programa de cifra simétrica de bloco AES-GCM.
-
-
 Para Criptografar uma mensagem:
 --------------------
 Plain Text e Key estão pre-setados no programa, mas podem ser alterados.
@@ -16,7 +13,7 @@ Plain Text e Key estão pre-setados no programa, mas podem ser alterados.
 
 
 
-Para Descriptografar ma mensagem:
+Para Descriptografar a mensagem:
 -----------------------
 1 - crie um executável do código usando GCC ou qualquer outro compilador, passando -lssl e -lcrypto.
 	ex.: gcc < programa.c > -o < nome_do_executavel > -lssl -lcrypto
