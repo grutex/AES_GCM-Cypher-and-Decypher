@@ -1,61 +1,52 @@
-# AES_GCM-Cypher-and-Decypher
-2 Separate algorithms that Cyphers &amp; Decyphers any given Plain Text with the given key using AES-GCM
+🛡️ AES-GCM Encryption/Decryption Tool
+A simple implementation using OpenSSL to encrypt and decrypt messages with AES-GCM.
 
-HOW TO:
+🇧🇷 Português (PT-BR)
+🔐 Como Encriptar
+O Plain Text (texto puro) e a Key (chave) estão pré-configurados no código, mas podem ser alterados livremente.
 
-[PT-BR]
-Para Encriptar uma messagem:
---------------------
-Plain Text e Key estão pre-setados no programa, mas podem ser alterados.
+Compile o código: Utilize o GCC (ou outro compilador) passando as flags do OpenSSL.
 
-1 - crie um executável do código usando GCC ou qualquer outro compilador, passando -lssl e -lcrypto.
-	ex.: gcc < programa.c > -o < nome_do_executavel > -lssl -lcrypto
+Bash
+gcc programa.c -o encrypt -lssl -lcrypto
+Execute o programa: No terminal, rode o executável.
 
-2 - execute-o no terminal, um print com o exto cifrado, iv e a tag serão gerados baseados no plain_text
-	e na chave.
+Bash
+./encrypt
+Resultado: O texto cifrado, o IV e a Tag serão gerados em formato hexadecimal e exibidos no console.
 
-3 - parâmetros criptografados, já em hexadecimal, serão gerados e imprimidos no terminal.
+🔓 Como Decifrar
+Compile o código:
 
+Bash
+gcc decifrar.c -o decrypt -lssl -lcrypto
+Passe os parâmetros: Execute o programa enviando o texto cifrado, o IV e a Tag GCM (em hexadecimal) via linha de comando, exatamente nesta ordem:
 
+Bash
+./decrypt <hex_ciphertext> <hex_iv> <hex_tagGCM>
+Sucesso: Se os parâmetros forem válidos e a tag coincidir, a mensagem original será revelada.
 
-Para Decifrar a menssagem:
------------------------
-1 - crie um executável do código usando GCC ou qualquer outro compilador, passando -lssl e -lcrypto.
-	ex.: gcc < programa.c > -o < nome_do_executavel > -lssl -lcrypto
+🇺🇸 English (EN-US)
+🔐 How to Encrypt
+Plain Text and Key are preset in the program but can be modified.
 
-2 - passe na linha de comando o texto cifrado, o vetor de inicialização(iv) e a tag do GCM (em HEXADECIMAL)
-	exatamente nessa ordem (argv[1], [2], [3]) valores que são dados após a execução do código.
-	ex.: ./decrypt < hex_plaintext > <hex_iv> <hex_tagGCM>
-		
-3 - Se os parâmetros derem match, a me
+Compile the code: Use GCC or any other compiler, passing the -lssl and -lcrypto flags.
 
+Bash
+gcc program.c -o encrypt -lssl -lcrypto
+Run the program: Execute it in your terminal.
 
+Bash
+./encrypt
+Output: The ciphertext, IV, and Tag (in hexadecimal) will be generated and printed to the terminal.
 
+🔓 How to Decrypt
+Compile the code:
 
+Bash
+gcc decrypt.c -o decrypt -lssl -lcrypto
+Provide parameters: Pass the ciphertext, Initialization Vector (IV), and the GCM tag (in HEX) via command line in this exact order (argv[1], [2], [3]):
 
-[EN-US]
-
-To Encrypt a message:
---------------------
-1 — Create an executable from the code using GCC or any other compiler, passing the -lssl and -lcrypto flags.
-
-Example: gcc <program.c> -o <executable_name> -lssl -lcrypto
-
-2 — Run it in the terminal. A printout containing the ciphertext, IV (Initialization Vector), and tag will be generated based on the plain_text and the key.
-
-3 — Encrypted parameters, already in hexadecimal format, will be generated and printed to the terminal.
-
-Aqui está a continuação da tradução, mantendo o tom técnico e o padrão de documentação:
-
-
-To Decrypt the Message:
---------------------
-1 — Create an executable from the code using GCC or any other compiler, passing the -lssl and -lcrypto flags.
-
-Example: gcc <program.c> -o <executable_name> -lssl -lcrypto
-
-2 — Pass the ciphertext, Initialization Vector (IV), and the GCM tag (in HEXADECIMAL) via command line, exactly in that order (argv[1], [2], [3]). These are the values provided after executing the encryption code.
-
-Example: ./decrypt <hex_ciphertext> <hex_iv> <hex_tagGCM>
-
-3 — If the parameters match, the original message will be decrypted and displayed.
+Bash
+./decrypt <hex_ciphertext> <hex_iv> <hex_tagGCM>
+Success: If the parameters match, the original message will be decrypted and displayed.
